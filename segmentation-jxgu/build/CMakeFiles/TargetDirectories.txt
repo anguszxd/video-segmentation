@@ -1,1 +1,1 @@
-/media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles/graphcut.dir
+/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles/graphcut.dir

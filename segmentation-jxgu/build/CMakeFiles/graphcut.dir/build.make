@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu
+CMAKE_SOURCE_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build
+CMAKE_BINARY_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/graphcut.dir/depend.make
@@ -49,37 +49,37 @@ include CMakeFiles/graphcut.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/graphcut.dir/flags.make
 
-CMakeFiles/graphcut.dir/graphcut.cpp.o: CMakeFiles/graphcut.dir/flags.make
-CMakeFiles/graphcut.dir/graphcut.cpp.o: ../graphcut.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/graphcut.dir/graphcut.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/graphcut.dir/graphcut.cpp.o -c /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/graphcut.cpp
+CMakeFiles/graphcut.dir/grabcut.cpp.o: CMakeFiles/graphcut.dir/flags.make
+CMakeFiles/graphcut.dir/grabcut.cpp.o: ../grabcut.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/graphcut.dir/grabcut.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/graphcut.dir/grabcut.cpp.o -c /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/grabcut.cpp
 
-CMakeFiles/graphcut.dir/graphcut.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphcut.dir/graphcut.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/graphcut.cpp > CMakeFiles/graphcut.dir/graphcut.cpp.i
+CMakeFiles/graphcut.dir/grabcut.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphcut.dir/grabcut.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/grabcut.cpp > CMakeFiles/graphcut.dir/grabcut.cpp.i
 
-CMakeFiles/graphcut.dir/graphcut.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphcut.dir/graphcut.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/graphcut.cpp -o CMakeFiles/graphcut.dir/graphcut.cpp.s
+CMakeFiles/graphcut.dir/grabcut.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphcut.dir/grabcut.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/grabcut.cpp -o CMakeFiles/graphcut.dir/grabcut.cpp.s
 
-CMakeFiles/graphcut.dir/graphcut.cpp.o.requires:
-.PHONY : CMakeFiles/graphcut.dir/graphcut.cpp.o.requires
+CMakeFiles/graphcut.dir/grabcut.cpp.o.requires:
+.PHONY : CMakeFiles/graphcut.dir/grabcut.cpp.o.requires
 
-CMakeFiles/graphcut.dir/graphcut.cpp.o.provides: CMakeFiles/graphcut.dir/graphcut.cpp.o.requires
-	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/graphcut.cpp.o.provides.build
-.PHONY : CMakeFiles/graphcut.dir/graphcut.cpp.o.provides
+CMakeFiles/graphcut.dir/grabcut.cpp.o.provides: CMakeFiles/graphcut.dir/grabcut.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/grabcut.cpp.o.provides.build
+.PHONY : CMakeFiles/graphcut.dir/grabcut.cpp.o.provides
 
-CMakeFiles/graphcut.dir/graphcut.cpp.o.provides.build: CMakeFiles/graphcut.dir/graphcut.cpp.o
+CMakeFiles/graphcut.dir/grabcut.cpp.o.provides.build: CMakeFiles/graphcut.dir/grabcut.cpp.o
 
 # Object files for target graphcut
 graphcut_OBJECTS = \
-"CMakeFiles/graphcut.dir/graphcut.cpp.o"
+"CMakeFiles/graphcut.dir/grabcut.cpp.o"
 
 # External object files for target graphcut
 graphcut_EXTERNAL_OBJECTS =
 
-graphcut: CMakeFiles/graphcut.dir/graphcut.cpp.o
+graphcut: CMakeFiles/graphcut.dir/grabcut.cpp.o
 graphcut: CMakeFiles/graphcut.dir/build.make
 graphcut: /usr/local/lib/libopencv_videostab.a
 graphcut: /usr/local/lib/libopencv_videoio.a
@@ -128,7 +128,7 @@ graphcut: CMakeFiles/graphcut.dir/link.txt
 CMakeFiles/graphcut.dir/build: graphcut
 .PHONY : CMakeFiles/graphcut.dir/build
 
-CMakeFiles/graphcut.dir/requires: CMakeFiles/graphcut.dir/graphcut.cpp.o.requires
+CMakeFiles/graphcut.dir/requires: CMakeFiles/graphcut.dir/grabcut.cpp.o.requires
 .PHONY : CMakeFiles/graphcut.dir/requires
 
 CMakeFiles/graphcut.dir/clean:
@@ -136,6 +136,6 @@ CMakeFiles/graphcut.dir/clean:
 .PHONY : CMakeFiles/graphcut.dir/clean
 
 CMakeFiles/graphcut.dir/depend:
-	cd /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles/graphcut.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles/graphcut.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/graphcut.dir/depend
 

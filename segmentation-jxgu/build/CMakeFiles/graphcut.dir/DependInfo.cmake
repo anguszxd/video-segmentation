@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/graphcut.cpp" "/media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles/graphcut.dir/graphcut.cpp.o"
+  "/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/grabcut.cpp" "/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles/graphcut.dir/grabcut.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

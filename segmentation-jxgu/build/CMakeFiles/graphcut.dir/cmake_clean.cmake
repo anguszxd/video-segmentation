@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/graphcut.dir/graphcut.cpp.o"
+  "CMakeFiles/graphcut.dir/grabcut.cpp.o"
   "graphcut.pdb"
   "graphcut"
 )

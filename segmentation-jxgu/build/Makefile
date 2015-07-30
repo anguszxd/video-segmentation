@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu
+CMAKE_SOURCE_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build
+CMAKE_BINARY_DIR = /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,9 +73,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,29 +115,29 @@ graphcut/fast:
 	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/build
 .PHONY : graphcut/fast
 
-graphcut.o: graphcut.cpp.o
-.PHONY : graphcut.o
+grabcut.o: grabcut.cpp.o
+.PHONY : grabcut.o
 
 # target to build an object file
-graphcut.cpp.o:
-	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/graphcut.cpp.o
-.PHONY : graphcut.cpp.o
+grabcut.cpp.o:
+	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/grabcut.cpp.o
+.PHONY : grabcut.cpp.o
 
-graphcut.i: graphcut.cpp.i
-.PHONY : graphcut.i
+grabcut.i: grabcut.cpp.i
+.PHONY : grabcut.i
 
 # target to preprocess a source file
-graphcut.cpp.i:
-	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/graphcut.cpp.i
-.PHONY : graphcut.cpp.i
+grabcut.cpp.i:
+	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/grabcut.cpp.i
+.PHONY : grabcut.cpp.i
 
-graphcut.s: graphcut.cpp.s
-.PHONY : graphcut.s
+grabcut.s: grabcut.cpp.s
+.PHONY : grabcut.s
 
 # target to generate assembly for a file
-graphcut.cpp.s:
-	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/graphcut.cpp.s
-.PHONY : graphcut.cpp.s
+grabcut.cpp.s:
+	$(MAKE) -f CMakeFiles/graphcut.dir/build.make CMakeFiles/graphcut.dir/grabcut.cpp.s
+.PHONY : grabcut.cpp.s
 
 # Help Target
 help:
@@ -148,9 +148,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... graphcut"
 	@echo "... rebuild_cache"
-	@echo "... graphcut.o"
-	@echo "... graphcut.i"
-	@echo "... graphcut.s"
+	@echo "... grabcut.o"
+	@echo "... grabcut.i"
+	@echo "... grabcut.s"
 .PHONY : help
 
 

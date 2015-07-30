@@ -1,4 +1,4 @@
-# Install script for directory: /media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu
+# Install script for directory: /media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/media/psf/Home/GitHub/superb-view-video-segmentation/code/segmentation-jxgu/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/psf/Home/GitHub/superb-view-video-segmentation/segmentation-jxgu/trainHOG_cv/train_HOG.cpp
+opencv2/opencv.hpp
+-
+string
+-
+iostream
+-
+fstream
+-
+vector
+-
+time.h
+-
+

@@ -8,6 +8,6 @@ include_directories(GCv2p3)
 
 link_libraries( graphcut /usr/local/lib)
 
-add_executable (graphcut graphcut.cpp)
+add_executable (graphcut grabcut.cpp)
 
 target_link_libraries( graphcut ${OpenCV_LIBS})
