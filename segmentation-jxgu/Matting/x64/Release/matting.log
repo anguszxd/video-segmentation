@@ -1,0 +1,27 @@
+﻿Build started 2015/6/25 14:00:55.
+     1>Project "D:\matting\trunk\matting\Matting\matting.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\matting\trunk\matting\x64\Release\matting.exe" /NOLOGO /LIBPATH:D:\opencv\WITH_CUDA\lib\Release /LIBPATH:"C:\Program Files\JAI\SDK\library\CPP\lib\Win64_x64" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64" cuda.lib cublas.lib cublas_device.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\matting\trunk\matting\x64\Release\matting.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\matting\trunk\matting\x64\Release\matting.lib" /MACHINE:X64 x64\Release\kernel.cu.obj
+         x64\Release\camera.obj
+         x64\Release\matting.obj
+         x64\Release\mattingPostProcess.obj
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol cudaDeviceReset referenced in function "void __cdecl check<enum cudaError>(enum cudaError,char const * const,char const * const,int)" (??$check@W4cudaError@@@@YAXW4cudaError@@QEBD1H@Z)
+     1>matting.obj : error LNK2001: unresolved external symbol cudaDeviceReset
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol cudaConfigureCall referenced in function "void __cdecl cv::gpu::device::trace_bg_(struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct cv::gpu::PtrStepSz<unsigned char>,struct CUstream_st *)" (?trace_bg_@device@gpu@cv@@YAXU?$PtrStepSz@E@23@00000000PEAUCUstream_st@@@Z)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol cudaSetupArgument referenced in function "void __cdecl __device_stub__ZN2cv3gpu6device15trace_bg_kernelENS0_9PtrStepSzIfEES3_S3_NS2_I6float3EES5_S5_NS2_IhEES6_S6_(struct cv::gpu::PtrStepSz<float> &,struct cv::gpu::PtrStepSz<float> &,struct cv::gpu::PtrStepSz<float> &,struct cv::gpu::PtrStepSz<struct float3> &,struct cv::gpu::PtrStepSz<struct float3> &,struct cv::gpu::PtrStepSz<struct float3> &,struct cv::gpu::PtrStepSz<unsigned char> &,struct cv::gpu::PtrStepSz<unsigned char> &,struct cv::gpu::PtrStepSz<unsigned char> &)" (?__device_stub__ZN2cv3gpu6device15trace_bg_kernelENS0_9PtrStepSzIfEES3_S3_NS2_I6float3EES5_S5_NS2_IhEES6_S6_@@YAXAEAU?$PtrStepSz@M@gpu@cv@@00AEAU?$PtrStepSz@Ufloat3@@@23@11AEAU?$PtrStepSz@E@23@22@Z)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol cudaLaunch referenced in function "enum cudaError __cdecl _GLOBAL__N__41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4::cudaLaunch<char>(char *)" (??$cudaLaunch@D@_GLOBAL__N__41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4@@YA?AW4cudaError@@PEAD@Z)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol cudaMemcpyToSymbol referenced in function "enum cudaError __cdecl _GLOBAL__N__41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4::cudaMemcpyToSymbol<struct HostPara>(struct HostPara const &,void const *,unsigned __int64,unsigned __int64,enum cudaMemcpyKind)" (??$cudaMemcpyToSymbol@UHostPara@@@_GLOBAL__N__41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4@@YA?AW4cudaError@@AEBUHostPara@@PEBX_K2W4cudaMemcpyKind@@@Z)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol __cudaRegisterFatBinary referenced in function "void __cdecl __sti____cudaRegisterAll_41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4(void)" (?__sti____cudaRegisterAll_41_tmpxft_00000c70_00000000_5_kernel_cpp1_ii_dd6523d4@@YAXXZ)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol __cudaUnregisterFatBinary referenced in function "void __cdecl __cudaUnregisterBinaryUtil(void)" (?__cudaUnregisterBinaryUtil@@YAXXZ)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol __cudaRegisterVar referenced in function "void __cdecl __nv_cudaEntityRegisterCallback(void * *)" (?__nv_cudaEntityRegisterCallback@@YAXPEAPEAX@Z)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol __cudaRegisterFunction referenced in function "void __cdecl __nv_cudaEntityRegisterCallback(void * *)" (?__nv_cudaEntityRegisterCallback@@YAXPEAPEAX@Z)
+     1>matting.obj : error LNK2019: unresolved external symbol cudaSetDevice referenced in function "public: __cdecl MattingGPU::MattingGPU(void)" (??0MattingGPU@@QEAA@XZ)
+     1>matting.obj : error LNK2019: unresolved external symbol cudaMalloc referenced in function "public: void __cdecl GpuHeap::reset(unsigned __int64,unsigned int,unsigned int)" (?reset@GpuHeap@@QEAAX_KII@Z)
+     1>matting.obj : error LNK2019: unresolved external symbol cudaFree referenced in function "public: __cdecl GpuHeap::~GpuHeap(void)" (??1GpuHeap@@QEAA@XZ)
+     1>matting.obj : error LNK2019: unresolved external symbol cudaProfilerStop referenced in function main
+     1>D:\matting\trunk\matting\x64\Release\matting.exe : fatal error LNK1120: 13 unresolved externals
+     1>Done Building Project "D:\matting\trunk\matting\Matting\matting.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.19

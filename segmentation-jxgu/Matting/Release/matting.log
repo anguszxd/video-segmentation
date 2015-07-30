@@ -1,0 +1,16 @@
+﻿Build started 2015/6/24 21:55:59.
+     1>Project "D:\matting\trunk\matting\Matting\matting.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W1 /WX- /O2 /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt camera.cpp matting.cpp mattingPostProcess.cpp
+         camera.cpp
+     1>camera.cpp(2): fatal error C1083: Cannot open include file: 'opencv2/opencv.hpp': No such file or directory
+         matting.cpp
+     1>d:\matting\trunk\matting\matting\Gpuopt.h(6): fatal error C1083: Cannot open include file: 'cuda_runtime.h': No such file or directory
+         mattingPostProcess.cpp
+     1>d:\matting\trunk\matting\matting\Gpuopt.h(6): fatal error C1083: Cannot open include file: 'cuda_runtime.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "D:\matting\trunk\matting\Matting\matting.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.41
