@@ -1,0 +1,21 @@
+Copyright:
+----------
+ 
+Tne University of Liege, Belgium, shall retain all property rights, title and interest in the hardware or the software, documentation and trademarks.
+ 
+All the names of companies and products mentioned in the documentation may be the trademarks of their respective owners.
+ 
+The licensing, use, leasing, loaning, translation, reproduction, copying or modification of the hardware or the software, marks or documentation, is not allowed without prior notice.
+ 
+Tne University of Liege shall not be liable for any loss of or damage to revenues, profits, goodwill, data, information systems or other special, incidental, indirect, consequential or punitive damages of any kind arising in connection with the use of the hardware or the software of the University of Liege or resulting of omissions or errors.
+
+Credits:
+--------
+
+This package uses the following libraries: 
+- ffmpeg (LGPL license) [http://www.ffmpeg.org/]
+- SDL (LGPL license) [http://www.libsdl.org/]
+- TCL/TK TclKit (license free) [http://www.tcl.tk]
+
+The installer is derived from Innosetup [http://www.jrsoftware.org/isinfo.php]
+
