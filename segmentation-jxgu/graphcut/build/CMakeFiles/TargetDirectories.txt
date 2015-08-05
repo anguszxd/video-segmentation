@@ -1,1 +1,0 @@
-/media/psf/Home/Work/beijing/project/graphcut/build/CMakeFiles/graphcut.dir
