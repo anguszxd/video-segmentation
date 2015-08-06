@@ -19,6 +19,8 @@ algorithm
 -
 vector
 -
+opencv2/photo.hpp
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/opencv2/photo.hpp
 opencv2/objdetect/objdetect.hpp
 /home/jxgu/github/superb-view-video-segmentation/seg_jxgu/opencv2/objdetect/objdetect.hpp
 opencv2/highgui/highgui.hpp

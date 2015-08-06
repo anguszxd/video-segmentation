@@ -1,7 +1,7 @@
 import cv2
 import argparse
 
-cap = cv2.VideoCapture('test-0712-001.avi')
+cap = cv2.VideoCapture('test-0712-004.avi')
 count = 0
 while cap.isOpened():
     ret,frame = cap.read()

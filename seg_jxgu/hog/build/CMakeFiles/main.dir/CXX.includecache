@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/hog/hog.cpp
+iostream
+-
+opencv2/opencv.hpp
+-
+
