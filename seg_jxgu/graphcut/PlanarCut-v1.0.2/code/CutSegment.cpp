@@ -53,7 +53,7 @@ CutSegment::CutSegment(int width, int height) : CutGrid(height, width),
     this->width  = width;
     this->height = height;
   } else {
-    throw ExceptionUnexpectedError();
+    //throw ExceptionUnexpectedError();
   }
 
   imData = new uchar[width * height * 3];
@@ -101,7 +101,7 @@ void CutSegment::setSourceSink(const uchar *stMask, uchar source, uchar sink) {
     if (stMask[idx] == source)
       break; 
   if (idx >= width*height)
-    throw ExceptionSourceNotDefined();
+  //  throw ExceptionSourceNotDefined();
   imMask[idx] = IDX_SOURCE;
   setSource(idx / width, idx % width);
 
@@ -134,7 +134,7 @@ void CutSegment::setSourceSink(const uchar *stMask, uchar source, uchar sink) {
     if (stMask[idx] == sink)
       break; 
   if (idx >= width*height)
-    throw ExceptionSinkNotDefined();
+    //throw ExceptionSinkNotDefined();
   imMask[idx] = IDX_SINK;
   setSink(idx / width, idx % width);
 
