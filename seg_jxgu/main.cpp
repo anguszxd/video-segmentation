@@ -15,6 +15,9 @@
 int DELAY_CAPTION = 1500;
 int DELAY_BLUR = 100;
 int MAX_KERNEL_LENGTH = 31;
+int thresh = 100;
+int max_thresh = 255;
+
 
 using namespace std;
 using namespace cv;
@@ -30,10 +33,35 @@ int absolute_val(int a)
 		return -1*a;
 	}
 }
+static void getBinMask( const Mat& comMask, Mat& binMask )
+{
+    if( comMask.empty() || comMask.type()!=CV_8UC1 )
+        CV_Error( Error::StsBadArg, "comMask is empty or has incorrect type (not CV_8UC1)" );
+    if( binMask.empty() || binMask.rows!=comMask.rows || binMask.cols!=comMask.cols )
+        binMask.create( comMask.size(), CV_8UC1 );
+    binMask = comMask & 1;
+}
+Mat FillHoles( Mat _src)
+{
+    CV_Assert(_src.type()==CV_8UC1);
+    Mat dst;
+    vector<vector<Point> > contours;
+    vector<Vec4i> hierarchy;
 
+    findContours(_src,contours,hierarchy,CV_RETR_CCOMP,CV_CHAIN_APPROX_SIMPLE,cv::Point(0,0));
+    CvScalar color=cvScalar(255);
+    dst=Mat::zeros(_src.size(),CV_8UC1);
+
+    for(int i=0;i<contours.size();i++)
+    {
+        drawContours(dst,contours,i,color,-1,8,hierarchy,0,cv::Point());
+    }
+    return dst;
+}
 
 int main(int argc,char* argv[])
 {
+    RNG rng(12345);
     double alpha = 1.0; /**< Simple contrast control [1.0-3.0] */
     int beta = 0;  /**< Simple brightness control [0-100]*/
     bool bSuccess;
@@ -74,7 +102,7 @@ int main(int argc,char* argv[])
     while (1)
     {
         int K=0;
-        Mat frame,diff,raw_frame;
+        Mat frame,resize_frame, diff,raw_frame;
         int di1,di2,di3;
 
         if (!(bSuccess = cap.read(frame))) //if not success, break loop
@@ -84,12 +112,15 @@ int main(int argc,char* argv[])
         }
         resize(frame,frame,Size(frame.cols/3,frame.rows/3));
         raw_frame = frame;
-#if 0
+        Mat raw_frame_grabcut;
+        frame.copyTo(raw_frame_grabcut);
+
+#if 1
         cvNamedWindow("Original",0); 
         imshow("Original",frame);
 #endif
 
-#if 1
+#if 0
         vector<Rect> found, found_filtered;
         Mat human_frame = frame;
         //hog.detectMultiScale(frame, found, 0, Size(8,8), Size(32,32), 1.05, 2);
@@ -142,7 +173,7 @@ int main(int argc,char* argv[])
         Mat fgMaskMOG_denoise;
         medianBlur(fgMaskMOG, fgMaskMOG_denoise, 5);
         //GaussianBlur( image_seg, fgMaskMOG_denoise, Size( 1, 1 ), 0, 0 );
-        imshow("fgMaskMOG_denoise", fgMaskMOG_denoise);
+        //imshow("fgMaskMOG_denoise", fgMaskMOG_denoise);
         //pMOG->getBackgroundImage(bkMaskMOG);
         //cvNamedWindow("fgMaskMOG",0); 
         //imshow("fgMaskMOG", fgMaskMOG);
@@ -171,7 +202,7 @@ int main(int argc,char* argv[])
     			}
             }
         }
-        imshow("END_frame", frame);
+        //imshow("END_frame", frame);
         Mat frame_denoise;
         medianBlur(frame, frame_denoise, 5);
         //GaussianBlur( frame, frame_denoise, Size( 1, 1), 0, 0 );
@@ -180,22 +211,115 @@ int main(int argc,char* argv[])
             for(int j=0;j<frame.cols;j++)
             {  
 
-                if(frame_denoise.at<uchar>(i,j) ==255  || fgMaskMOG_denoise.at<uchar>(i,j) ==255 )
+                if(frame_denoise.at<uchar>(i,j) >200  || fgMaskMOG_denoise.at<uchar>(i,j) >200 )
                 {
                     result.at<uchar>(i,j) = 255;
-                    image_seg.at<Vec3b>(i, j) = raw_frame.at<Vec3b>(i, j);
                 }
                 else
                 {
                     result.at<uchar>(i,j) = 0;
+                }
+            }
+        }
+
+        result = FillHoles(result);
+
+#if 1
+        for(int i=0;i<frame.rows;i++)
+        {
+            for(int j=0;j<frame.cols;j++)
+            {  
+
+                if(result.at<uchar>(i,j) == 255 )
+                {
+                    image_seg.at<Vec3b>(i, j) = raw_frame.at<Vec3b>(i, j);
+                }
+                else
+                {
                     image_seg.at<Vec3b>(i, j) = 0;
                 }
             }
         }
 
-
         imshow("result", result);
         imshow("image_seg", image_seg);
+#endif
+
+
+        // Convert RGB Mat to GRAY
+        cv::Mat src_gray;
+        Mat threshold_output;
+        vector<vector<Point> > contours;
+        vector<Vec4i> hierarchy;
+
+        blur( result, src_gray, Size(3,3) );
+        /// Detect edges using Threshold
+        threshold( src_gray, threshold_output, thresh, 255, THRESH_BINARY );
+        /// Find contours
+        findContours( threshold_output, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
+        /// Approximate contours to polygons + get bounding rects and circles
+        vector<vector<Point> > contours_poly( contours.size() );
+        vector<Rect> boundRect( contours.size() );
+        vector<Point2f>center( contours.size() );
+        vector<float>radius( contours.size() );
+
+        for( int i = 0; i < contours.size(); i++ )
+        { 
+            approxPolyDP( Mat(contours[i]), contours_poly[i], 3, true );
+            boundRect[i] = boundingRect( Mat(contours_poly[i]) );
+            //minEnclosingCircle( (Mat)contours_poly[i], center[i], radius[i] );
+        }
+        printf("%d\n", contours.size());
+
+        /// Draw polygonal contour + bonding rects + circles
+        Mat drawing = Mat::zeros( threshold_output.size(), CV_8UC3 );
+
+#if 1
+        if (contours.size()>0)
+        {
+            printf("%d,%d\n", boundRect[0].x,boundRect[0].y);
+            printf("%d,%d\n", boundRect[0].width,boundRect[0].height);
+
+            if (boundRect[0].x>0 && boundRect[0].y>0 
+                && (boundRect[0].width)>20 
+                && (boundRect[0].height)>20)
+            {
+                
+                //use grabcut to segmentation
+                cv::Rect rectangle_grabcut(boundRect[0].x,boundRect[0].y,
+                                            boundRect[0].width,
+                                            boundRect[0].height);
+
+                Mat grapbcut_seg_result;
+
+                cv::Mat bgModel,fgModel; // the models (internally used)
+                // GrabCut segmentation
+                cv::grabCut(raw_frame,      // input image
+                            grapbcut_seg_result,    // segmentation result
+                            rectangle_grabcut,// rectangle containing foreground 
+                            bgModel,fgModel, // models
+                            1,        // number of iterations
+                            cv::GC_INIT_WITH_RECT); // use rectangle
+                // Get the pixels marked as likely foreground
+                cv::compare(grapbcut_seg_result,cv::GC_PR_FGD,grapbcut_seg_result,cv::CMP_EQ);
+                // Generate output image
+                cv::Mat foreground(raw_frame.size(),CV_8UC3,cv::Scalar(255,255,255));
+                image.copyTo(foreground,grapbcut_seg_result); // bg pixels not copied
+
+
+
+                Scalar color = Scalar( 255, 0, 0 );
+                //drawContours( raw_frame, contours_poly, i, color, 1, 8, vector<Vec4i>(), 0, Point() );
+                rectangle( raw_frame, boundRect[0].tl(), boundRect[0].br(), color, 2, 8, 0 );
+                        /// Show in a window
+                namedWindow( "Contours");
+                imshow( "Contours", raw_frame );
+                cv::namedWindow("Segmented Image");
+                cv::imshow("Segmented Image",foreground);
+                }
+        }
+ 
+#endif
 
         if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
         {
