@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/./maxflow/block.h
+block.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/./maxflow/block.h
+stdlib.h
+-
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/./maxflow/graph.h
+string.h
+-
+block.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/./maxflow/block.h
+assert.h
+-
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/ImgSegment.h
+opencv/cv.h
+-
+map
+-
+./maxflow/graph.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/./maxflow/graph.h
+Pixel.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/Pixel.h
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/Pixel.h
+
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/main.cpp
+stdio.h
+-
+opencv/cv.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/opencv/cv.h
+opencv/highgui.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/opencv/highgui.h
+opencv/cvaux.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/opencv/cvaux.h
+ImgSegment.h
+/home/jxgu/github/superb-view-video-segmentation/seg_jxgu/graphcut/Interactive_Image_Segmentation/linux/ImgSegment.h
+
