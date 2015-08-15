@@ -3,7 +3,7 @@ close all;
 
 % Open an sample avi file
 
-filename = 'test-0712-001.avi';
+filename = 'test-0712-003.avi';
 mov = MMREADER(filename);
 
 % Output folder
