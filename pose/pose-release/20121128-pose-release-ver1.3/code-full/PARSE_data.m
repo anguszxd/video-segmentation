@@ -20,8 +20,8 @@ cls = [name '_data'];
 try
 	load([cachedir cls]);
 catch
-  trainfrs_pos = 1:100; % training frames for positive
-  testfrs_pos = 101:305; % testing frames for positive
+  trainfrs_pos = 1:200; % training frames for positive
+  testfrs_pos = 201:305; % testing frames for positive
   trainfrs_neg = 615:1832; % training frames for negative 
 
   % -------------------
