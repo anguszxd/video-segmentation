@@ -17,5 +17,7 @@ This is a warehouse for video segmentation.
 - [Image segmentation application for identifying background and foreground objects by using Gaussian and Markov Random Fields probabilistic models , Edmond-Karp/Dinic max flow algorithms, minimum cut ](https://github.com/evelinad/Image-Segmentation)
 - [Felzenszwalb and Huttenlocher's graph-based image segmentation algorithm, extended to use depth data in various ways](https://github.com/bhaskara/rgbd_graph_segmentation)
 - [Efficient Graph-Based Image Segmentation](https://github.com/daviddoria/SuperPixelSegmentation)
+- [Morphological snakes for image segmentation and tracking](https://github.com/pmneila/morphsnakes)
+- [Python library for creating flow networks and computing the maxflow/mincut (aka graph-cuts for Python)](https://github.com/pmneila/PyMaxflow)
 
 **Creator**: Gu Jiuxiang, **eMail**(gujiuxiang@qq.com)
